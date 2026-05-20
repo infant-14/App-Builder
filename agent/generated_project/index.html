@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ColorfulTodo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- SVG sprite sheet for icons -->
+    <svg style="display:none;">
+        <use href="assets/icons.svg#icon-sprite"></use>
+    </svg>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <h1>ColorfulTodo</h1>
+        <button id="theme-toggle" aria-label="Toggle theme">
+            <svg><use href="assets/icons.svg#icon-theme"></use></svg>
+        </button>
+    </header>
+    <!-- Main UI components -->
+    <main class="app-main">
+        <!-- Form for adding a new task -->
+        <section class="add-task-section">
+            <input type="text" id="new-task-input" placeholder="Add a new task..." />
+            <select id="category-select">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <button id="add-task-btn" aria-label="Add task">
+                <svg><use href="assets/icons.svg#icon-add"></use></svg>
+            </button>
+        </section>
+        <!-- Search and filter controls -->
+        <section class="search-filter-section">
+            <input type="text" id="search-input" placeholder="Search tasks..." />
+            <select id="filter-select">
+                <!-- Filter options will be populated dynamically -->
+            </select>
+        </section>
+        <!-- Task list -->
+        <ul id="task-list"></ul>
+    </main>
+    <!-- UI components will be injected here -->
+    <footer class="app-footer">
+        <p>© 2024 ColorfulTodo. See the <a href="README.md">README</a> for more information.</p>
+    </footer>
+</body>
+</html>
