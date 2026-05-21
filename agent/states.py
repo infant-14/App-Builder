@@ -27,9 +27,11 @@ class ImplementationTask(BaseModel):
 
 
 class TaskPlan(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     implementation_steps: list[ImplementationTask] = Field(
         description="A list of steps to be taken to implement the task")
-    model_config = ConfigDict(extra="allow")
+    plan: Optional[Plan] = Field(None, description="The parent plan")
 
 
 class CoderState(BaseModel):
